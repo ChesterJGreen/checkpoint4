@@ -12,22 +12,69 @@
     <title>checkpoint4</title>
 </head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-dark navbar-expand text-light">
-            <a class="navbar-brand skeleton-loader" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2 px-2">Inspire</span>
-            </a>
+<style>
+    body.debug .container,
+    body.debug .container-fluid {
+        outline: 2px double blue;
+        outline-offset: -2px;
+    }
 
-        </nav>
+    body.debug .row {
+        outline: 2px dashed red;
+        outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+        outline: 2px dotted forestgreen;
+        outline-offset: -3px;
+    }
+</style>
+
+<body class="debug">
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col-2 pt-3">
+                <a class="navbar-brand skeleton-loader" href="#">
+                    <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+                    <span class="ml-2 px-2">Inspire</span>
+                </a>
+            </div>
+            <div class="offset-8 col-2 pt-3">
+                <h2>90🔥</h2>
+            </div>
+        </div>
+
     </header>
-    <main class="container">
-        <div id="app"></div>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="mt-5 col-12 text-center">
+                <span class="tall-text text-center">3:00 PM</span>
+                <p class="text-center">Good Afternoon, Dude!</p>
+            </div>
+            <div class="col-5 offset-3">
+                <img class="" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg">
+            </div>
+        </div>
     </main>
-    <footer class="bg-dark text-light">
-        <div class="text-center">
-            <p><small>Made with love by Codeworks</small></p>
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <h5>Image Info</h5>
+            </div>
+            <div class="col-6 text-center">
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae corporis adipisci
+                    asperiores!</h3>
+                <h6>- Some Old Dude</h6>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <h4>ToDo List</h4>
+                    <li>Take a walk</li>
+                    <li>Finish Project</li>
+                    <li>And Other ToDos</li>
+                    <button type="button" class="btn btn-primary">New Todo</button>
+                </div>
+            </div>
         </div>
     </footer>
 

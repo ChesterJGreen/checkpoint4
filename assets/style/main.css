@@ -10695,4 +10695,9 @@ main {
   flex-grow: 1;
 }
 
+.tall-text {
+  margin-top: 80%;
+  font-size: 105px;
+}
+
 /*# sourceMappingURL=main.css.map */
