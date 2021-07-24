@@ -30,8 +30,8 @@
     }
 </style>
 
-<body class="debug">
-    <header class="container-fluid">
+<body class="debug" id="full-body">
+    <main class="container-fluid">
         <div class="row">
             <div class="col-2 pt-3">
                 <a class="navbar-brand skeleton-loader" href="#">
@@ -39,32 +39,33 @@
                     <span class="ml-2 px-2">Inspire</span>
                 </a>
             </div>
-            <div class="offset-8 col-2 pt-3">
-                <h2>90🔥</h2>
+            <div class="offset-8 col-2 pt-3 text-light">
+                <h2 id="temp">90🔥</h2>
             </div>
         </div>
 
-    </header>
-    <main class="container-fluid">
-        <div class="row">
+
+
+        <div class="row" id="mid-page">
             <div class="mt-5 col-12 text-center">
                 <span class="tall-text text-center">3:00 PM</span>
                 <p class="text-center">Good Afternoon, Dude!</p>
             </div>
-            <div class="col-5 offset-3">
-                <img class="" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg">
-            </div>
+
         </div>
-    </main>
-    <footer class="container-fluid">
+
+
         <div class="row">
-            <div class="col-3">
-                <h5>Image Info</h5>
+            <div class="col-3 justify-content-center">
+                <div class="text-light">
+                    <span>Image created by:</span>
+                    <h5 id="author"></h5>
+                </div>
             </div>
-            <div class="col-6 text-center">
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae corporis adipisci
-                    asperiores!</h3>
-                <h6>- Some Old Dude</h6>
+            <div class="col-6 text-center text-light authorH">
+                <span id="quote-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae corporis
+                    adipisci
+                    asperiores!</span>
             </div>
             <div class="col-3">
                 <div class="card">
@@ -76,9 +77,13 @@
                 </div>
             </div>
         </div>
+    </main>
+    <footer>
     </footer>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 

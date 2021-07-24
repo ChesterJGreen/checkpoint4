@@ -10700,4 +10700,22 @@ main {
   font-size: 105px;
 }
 
+#full-body {
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+#mid-page {
+  min-height: 76vh;
+}
+
+.authorH:hover .authorV {
+  opacity: 1;
+}
+.authorH .authorV {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
 /*# sourceMappingURL=main.css.map */

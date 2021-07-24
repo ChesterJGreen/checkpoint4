@@ -1,8 +1,12 @@
 import { ProxyState } from "../AppState.js";
-import { ImagesService } from "../Services/ImagesService.js";
+import { sandBox } from "../Services/AxiosService.js";
+import { imagesService } from "../Services/ImagesService.js";
 
 function _draw() {
+  document.getElementById('full-body').style.backgroundImage = ProxyState.image.Template
+  document.getElementById('author').innerText = ProxyState.image.AuthorTemplate
 }
+
 //Private
 // function _draw() {
 //   let values = ProxyState.values;
@@ -19,9 +23,21 @@ function _draw() {
 
 export default class ImagesController {
   constructor() {
-    ProxyState.on("values", _draw); //value does not work
+    ProxyState.on("image", _draw); //value does not work
     _draw()
+
+    this.getNewImage()
   }
 
 
+  async getNewImage() {
+    try {
+      await imagesService.getNewImage()
+    } catch (error) {
+      console.error('could not get image' + error)
+    }
+
+
+
+  }
 }
