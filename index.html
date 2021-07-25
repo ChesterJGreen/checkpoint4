@@ -57,36 +57,46 @@
 
 
         <div class="row">
-            <div class="col-3 justify-content-center">
-                <div class="text-light">
-                    <span>Image created by:</span>
-                    <h5 id="author"></h5>
+
+            <div class="offset-3 col-6 text-center text-light  justify-content-center">
+                <div class="row">
+                    <div class="col-12 my-4"></div>
+                    <div class="col-12 authorH">
+                        <span id="quote-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae
+                            corporis
+                            adipisci
+                            asperiores!</span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 text-center text-light authorH">
-                <span id="quote-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae corporis
-                    adipisci
-                    asperiores!</span>
+
             </div>
             <div class="col-3">
                 <div class="card" id="todo-list">
                     <div class="row">
-                        <div class="col-12 mx-2 py-1">
+                        <div class="col-12  py-1">
                             <h4>ToDo List</h4>
                         </div>
 
                     </div>
                     <div class="row">
-                        <div class="col-12 mx-2 mb-2">
-                            <li class="my-1">Take a walk</li>
-                            <li class="my-1">Finish Project</li>
-                            <li class="my-1">And Other ToDos</li>
+                        <div class="col-12  ">
+                            <li class="ml-1">Take a walk</li>
+                            <li class="ml-1">Finish Project</li>
+                            <li class="ml-1">And Other ToDos</li>
                         </div>
                     </div>
 
 
                     <button type="button" type="submit" onclick="app.todosController.createTodo()" class=" btn
                         btn-primary">New Todo</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 d-flex align-items-end">
+                <div class="text-light">
+                    <span>Image created by:</span>
+                    <h5 id="author"></h5>
                 </div>
             </div>
         </div>
