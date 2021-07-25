@@ -8,8 +8,8 @@ function _draw() {
   todo.forEach(p => template += `<li class="action" onclick="app.todosController.removeTodo('${p.description}')">${p.description}</li>`)
   if (!template) {
     template += `<p>Nothing To Do</p>`
-    document.getElementById('todo-list').innerHTML = template
   }
+  document.getElementById('todo-list').innerHTML = template
 }
 
 export default class TodosController {
@@ -34,10 +34,11 @@ export default class TodosController {
       event.preventDefault()
       let form = event.target
       let rawTodo = {
+        // @ts-ignore
         description: form.description.value,
       }
-      todosService.addTodo(rawTodo)
-      await todosService.addTodo()
+      await todosService.addTodo(rawTodo)
+      // @ts-ignore
       form.reset()
     } catch (error) {
       console.error('could not post to server' + error)
