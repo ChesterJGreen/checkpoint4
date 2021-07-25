@@ -9,6 +9,9 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <title>checkpoint4</title>
 </head>
 
@@ -44,25 +47,18 @@
                 <h2 id="temp">90🔥</h2>
             </div>
         </div>
-
-
-
         <div class="row" id="mid-page">
             <div class="mt-5 col-12 text-center">
                 <span class="tall-text text-center text" style="font-family:  Verdana, sans-serif;" id="clock">3:00
                     PM</span>
                 <p class="text-center text"><span id="clock-msg">Good Afternoon</span>, Dude!</p>
             </div>
-
         </div>
-
-
         <div class="row ">
             <div class="col-3">
                 <div class="row text">
                     <div class="col-12 my-5"></div>
                     <div class="col-12 my-4"></div>
-
                     <div class="col-6 d-flex align-items-end">
                         <div class="text-light">
                             <span>Image created by:</span>
@@ -81,49 +77,70 @@
                             asperiores!</span>
                     </div>
                 </div>
-
             </div>
             <div class="col-3">
                 <div class="row">
                     <div class=" col-12">
-
-
                         <div class="card text bg-info text-light hrb px-3 py-2">
                             <div class="row">
                                 <div class="col-12">
                                     <h4>ToDo List</h4>
                                     <hr class="hrb">
                                 </div>
-
                             </div>
-                            <div class="row pb-1">
+                            <div class="row">
                                 <div class="col-12" id="todo-list">
-                                    <li class="ml-1">Take a walk</li>
-                                    <li class="ml-1">Finish Project</li>
-                                    <li class="ml-1">And Other ToDos</li>
+                                    <div class="row">
+                                        <div class="col-9 offset-1">
+                                            <input class="form-check-input todos" type="checkbox"
+                                                value="${this.completed}">
+                                            <label class="form-check-label todos" for="todo-item">
+                                                <span class="ml-1">Take a walk</span>
+                                        </div>
+                                        <div class="col-2"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                                        <div class="col-9 offset-1">
+                                            <input class="form-check-input todos" type="checkbox"
+                                                value="${this.completed}">
+                                            <label class="form-check-label todos" for="todo-item">
+                                                <span class="ml-1">how do you know if it fit</span>
+                                        </div>
+                                        <div class="col-2"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                                        <div class="col-9 offset-1">
+                                            <input class="form-check-input todos" type="checkbox"
+                                                value="${this.completed}">
+                                            <label class="form-check-label todos" for="todo-item">
+                                                <span class="ml-1">Piss of the neighbor</span>
+                                        </div>
+                                        <div class="col-2"><i class="fa fa-trash" aria-hidden="true"></i></div>
+
+
+                                    </div>
                                 </div>
                             </div>
-                            <form class="form-inline" onsubmit="app.todosController.addTodo()">
-                                <div class="form-group mx-sm-1 mb-2">
-                                    <input type="text" class="form-control" id="new-todo" placeholder="To Do Item"
-                                        name="description">
-                                </div>
-                                <button type="submit" class="btn btn-primary mb-2">+</button>
+                            <form class="form-inline" onsubmit="app.todosController.addTodo(this.description)">
+                                <div class="row">
+                                    <div class="form-group ">
+                                        <div class="col-10">
+                                            <input type="text" class="form-control border" id="new-todo"
+                                                placeholder="To Do Item" name="description" required min-length="3"
+                                                maxlength="25">
+                                        </div>
+                                        <div class="col-2  pr-2 mt-2">
+                                            <button type="submit" class="btn btn-primary border text mb-2">+</button>
                             </form>
-
-
-
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
+        </div>
         </div>
 
     </main>
     <footer>
     </footer>
     <script>
-
 
 
     </script>
