@@ -1,32 +1,44 @@
 import { ProxyState } from "../AppState.js"
+import { clocksService } from "../Services/ClocksService.js"
 
-
-
-function startTime() {
-  const today = new Date();
-  let h = today.getHours();
-  let m = today.getMinutes();
-  let s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
-  setTimeout(this.startTime, 1000);
-
-
+function _draw() {
+  document.getElementById('clock').innerHTML = this.timeT
 }
-function checkTime(i) {
-  if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
-  return i;
-}
+
+
+
+
 
 
 export default class ClocksController {
   constructor() {
+    ProxyState.on('clock', _draw)
 
-
-    startTime()
+    this.startTime()
 
   }
+  startTime() {
+
+    const today = new Date();
+    let amPm = 'AM'
+    let h = today.getHours();
+    if (h > 12) {
+      h = h - 12
+      amPm = 'PM'
+    }
+
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = clocksService.checkTime(m);
+    s = clocksService.checkTime(s);
+    let timeT = h + ":" + m + ":" + s + " " + amPm
+    document.getElementById('clock').innerHTML = timeT;
+    setTimeout(this.startTime, 1000);
+
+
+  }
+
+
 
 
 }

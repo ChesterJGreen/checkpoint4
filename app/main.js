@@ -10,7 +10,7 @@ class App {
   tempsController = new TempsController();
   quotesController = new QuotesController();
   todosController = new TodosController();
-  // clocksController = new ClocksController();
+  clocksController = new ClocksController();
 
 
 }

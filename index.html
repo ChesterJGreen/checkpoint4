@@ -71,24 +71,35 @@
 
             </div>
             <div class="col-3">
-                <div class="card" id="todo-list">
-                    <div class="row">
-                        <div class="col-12  py-1">
-                            <h4>ToDo List</h4>
+                <div class="row">
+                    <div class="offset-1 col-10">
+
+
+                        <div class="card" id="todo-list">
+                            <div class="row">
+                                <div class="col-12  py-1">
+                                    <h4>ToDo List</h4>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12  ">
+                                    <li class="ml-1">Take a walk</li>
+                                    <li class="ml-1">Finish Project</li>
+                                    <li class="ml-1">And Other ToDos</li>
+                                </div>
+                            </div>
+                            <form class="form-inline">
+                                <div class="form-group mx-sm-1 mb-1">
+                                    <input type="text" class="form-control" id="new-todo" placeholder="To Do Item">
+                                </div>
+                                <button type="submit" class="btn btn-primary mb-2">+</button>
+                            </form>
+
+
+
                         </div>
-
                     </div>
-                    <div class="row">
-                        <div class="col-12  ">
-                            <li class="ml-1">Take a walk</li>
-                            <li class="ml-1">Finish Project</li>
-                            <li class="ml-1">And Other ToDos</li>
-                        </div>
-                    </div>
-
-
-                    <button type="button" type="submit" onclick="app.todosController.createTodo()" class=" btn
-                        btn-primary">New Todo</button>
                 </div>
             </div>
         </div>
