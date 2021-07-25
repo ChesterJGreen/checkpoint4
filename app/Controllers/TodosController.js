@@ -1,10 +1,11 @@
 import { ProxyState } from "../AppState.js";
+import Todo from "../Models/Todo.js"
 import { todosService } from "../Services/TodosService.js";
 
 function _draw() {
+  const todo = ProxyState.todo
   let template = ''
-  let todos = ProxyState.todo
-  todos.forEach(t => template += todos.Template)
+  todo.forEach(p => template += `<li class="action" onclick="app.todosController.removeTodo('${p.description}')">${p.description}</li>`)
   if (!template) {
     template += `<p>Nothing To Do</p>`
     document.getElementById('todo-list').innerHTML = template
@@ -13,7 +14,8 @@ function _draw() {
 
 export default class TodosController {
   constructor() {
-    _draw()
+    ProxyState.on('todo', _draw)
+
     this.getTodoList()
   }
 

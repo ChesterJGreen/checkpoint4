@@ -1,3 +1,4 @@
+import { ProxyState } from "../AppState.js";
 export default class Todo {
   constructor({ id, completed, user, description }) {
     this.id = id

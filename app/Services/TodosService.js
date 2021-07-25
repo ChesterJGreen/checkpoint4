@@ -8,7 +8,7 @@ class TodosService {
   async getTodoList() {
     const res = await sandBox.get('ChesterG/todos')
     console.log(res.data)
-    ProxyState.todo = new Todo(res.data)
+    ProxyState.todo = res.data.map(t => new Todo(t))
   }
 
   async addTodo(rawTodo) {

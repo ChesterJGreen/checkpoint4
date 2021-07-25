@@ -10728,4 +10728,13 @@ main {
   box-shadow: -1px 1px 2px #b6caa8, 1px 1px 2px #b6caa8, 1px -1px 0 #b6caa8, -1px -1px 0 #b6caa8;
 }
 
+.hrb {
+  display: block;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 2px;
+  border-color: #f1f1f1;
+  box-shadow: -1px 1px 2px #23430C, 1px 1px 2px #23430C, 1px -1px 2px #23430C, -1px -1px 2px #23430C;
+}
+
 /*# sourceMappingURL=main.css.map */
