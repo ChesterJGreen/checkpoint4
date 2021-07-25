@@ -75,7 +75,7 @@
                     <div class="offset-1 col-10">
 
 
-                        <div class="card" id="todo-list">
+                        <div class="card">
                             <div class="row">
                                 <div class="col-12  py-1">
                                     <h4>ToDo List</h4>
@@ -83,15 +83,16 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-12  ">
+                                <div class="col-12" id="todo-list">
                                     <li class="ml-1">Take a walk</li>
                                     <li class="ml-1">Finish Project</li>
                                     <li class="ml-1">And Other ToDos</li>
                                 </div>
                             </div>
-                            <form class="form-inline">
+                            <form class="form-inline" onsubmit="app.todosController.addTodo()">
                                 <div class="form-group mx-sm-1 mb-1">
-                                    <input type="text" class="form-control" id="new-todo" placeholder="To Do Item">
+                                    <input type="text" class="form-control" id="new-todo" placeholder="To Do Item"
+                                        name="description">
                                 </div>
                                 <button type="submit" class="btn btn-primary mb-2">+</button>
                             </form>

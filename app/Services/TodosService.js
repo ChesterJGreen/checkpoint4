@@ -4,11 +4,19 @@ import { sandBox } from "./AxiosService.js";
 
 class TodosService {
 
+
   async getTodoList() {
-    const res = await sandBox.get('/ChesterG/todos')
+    const res = await sandBox.get('ChesterG/todos')
     console.log(res.data)
     ProxyState.todo = new Todo(res.data)
   }
+
+  async addTodo(rawTodo) {
+    const res = await sandBox.post('ChesterG/todos', rawTodo)
+    ProxyState.todo = [...ProxyState.todo, new Todo(rawTodo)]
+
+  }
+
 }
 
 export const todosService = new TodosService()

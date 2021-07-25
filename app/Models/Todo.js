@@ -13,7 +13,8 @@ export default class Todo {
 
 
   get Template() {
-    ruturn`
+    return `
+    <span>${this.description}</span>
   
   `
   }
