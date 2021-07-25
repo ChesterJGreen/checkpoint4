@@ -10717,4 +10717,15 @@ main {
   transition: all 0.3s linear;
 }
 
+.text {
+  color: white;
+  text-shadow: -1px 1px 2px #23430C, 1px 1px 2px #23430C, 1px -1px 2px #23430C, -1px -1px 2px #23430C;
+}
+
+.textR {
+  color: #613f3f;
+  border-color: yellowgreen;
+  box-shadow: -1px 1px 2px #b6caa8, 1px 1px 2px #b6caa8, 1px -1px 0 #b6caa8, -1px -1px 0 #b6caa8;
+}
+
 /*# sourceMappingURL=main.css.map */

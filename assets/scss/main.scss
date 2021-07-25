@@ -41,3 +41,20 @@ main {
     transition: all .3s linear
   }
 }
+.text{
+	color: rgb(255, 255, 255);
+		text-shadow: -1px 1px 2px #23430C,
+				  1px 1px 2px #23430C,
+				  1px -1px 2px #23430C,
+				  -1px -1px 2px #23430C;
+}
+
+.textR{
+	color: rgb(97, 63, 63);
+		border-color: yellowgreen; 
+    box-shadow: -1px 1px 2px #b6caa8,
+				  1px 1px 2px #b6caa8,
+				  1px -1px 0 #b6caa8,
+				  -1px -1px 0 #b6caa8;
+}
+

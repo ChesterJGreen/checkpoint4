@@ -14,7 +14,7 @@ export default class Todo {
 
   get Template() {
     return `
-    <span>${this.description}</span>
+    <span>'${this.description}'</span>
   
   `
   }

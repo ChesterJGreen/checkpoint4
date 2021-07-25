@@ -4,9 +4,11 @@ import { todosService } from "../Services/TodosService.js";
 function _draw() {
   let template = ''
   let todos = ProxyState.todo
-
-  document.getElementById('todo-list').innerHTML = todos.Template
-
+  todos.forEach(t => template += todos.Template)
+  if (!template) {
+    template += `<p>Nothing To Do</p>`
+    document.getElementById('todo-list').innerHTML = template
+  }
 }
 
 export default class TodosController {
@@ -24,19 +26,15 @@ export default class TodosController {
       console.error('could not get Todo List' + e)
     }
   }
-  async addTask() {
+  async addTodo() {
     try {
 
       event.preventDefault()
       let form = event.target
       let rawTodo = {
         description: form.description.value,
-        id: form.id.value,
-        completed: form.completed.value,
-
-
-
       }
+      todosService.addTodo(rawTodo)
       await todosService.addTodo()
       form.reset()
     } catch (error) {

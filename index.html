@@ -30,17 +30,17 @@
     }
 </style>
 
-<body class="debug" id="full-body">
+<body class="" id="full-body">
     <main class="container-fluid">
         <div class="row">
             <div class="col-2 pt-3">
-                <a class="navbar-brand " href="#">
-                    <!-- skeleton-loader -->
+                <a class="navbar-brand  skeleton-loader " href="#">
+                    <!---->
                     <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
                     <span class="ml-2 px-2">Inspire</span>
                 </a>
             </div>
-            <div class="offset-8 col-2 pt-3 text-light">
+            <div class="offset-8 col-2 pt-3 text-light text">
                 <h2 id="temp">90🔥</h2>
             </div>
         </div>
@@ -49,19 +49,31 @@
 
         <div class="row" id="mid-page">
             <div class="mt-5 col-12 text-center">
-                <span class="tall-text text-center text-light" id="clock">3:00 PM</span>
-                <p class="text-center">Good Afternoon, Dude!</p>
+                <span class="tall-text text-center  text" id="clock">3:00 PM</span>
+                <p class="text-center text"><span id="clock-msg">Good Afternoon</span>, Dude!</p>
             </div>
 
         </div>
 
 
-        <div class="row">
-
-            <div class="offset-3 col-6 text-center text-light  justify-content-center">
-                <div class="row">
+        <div class="row ">
+            <div class="col-3">
+                <div class="row text">
+                    <div class="col-12 my-5"></div>
                     <div class="col-12 my-4"></div>
-                    <div class="col-12 authorH">
+
+                    <div class="col-6 d-flex align-items-end">
+                        <div class="text-light">
+                            <span>Image created by:</span>
+                            <h5 id="author"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offset col-6 text-center text-light  justify-content-center">
+                <div class="row ">
+                    <div class="col-12 my-4"></div>
+                    <div class="col-12 text authorH">
                         <span id="quote-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae
                             corporis
                             adipisci
@@ -72,10 +84,10 @@
             </div>
             <div class="col-3">
                 <div class="row">
-                    <div class="offset-1 col-10">
+                    <div class=" col-11">
 
 
-                        <div class="card">
+                        <div class="card textR">
                             <div class="row">
                                 <div class="col-12  py-1">
                                     <h4>ToDo List</h4>
@@ -104,14 +116,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3 d-flex align-items-end">
-                <div class="text-light">
-                    <span>Image created by:</span>
-                    <h5 id="author"></h5>
-                </div>
-            </div>
-        </div>
+
     </main>
     <footer>
     </footer>
