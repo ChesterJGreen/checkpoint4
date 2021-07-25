@@ -34,7 +34,8 @@
     <main class="container-fluid">
         <div class="row">
             <div class="col-2 pt-3">
-                <a class="navbar-brand skeleton-loader" href="#">
+                <a class="navbar-brand " href="#">
+                    <!-- skeleton-loader -->
                     <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
                     <span class="ml-2 px-2">Inspire</span>
                 </a>
@@ -48,7 +49,7 @@
 
         <div class="row" id="mid-page">
             <div class="mt-5 col-12 text-center">
-                <span class="tall-text text-center">3:00 PM</span>
+                <span class="tall-text text-center text-light" id="clock">3:00 PM</span>
                 <p class="text-center">Good Afternoon, Dude!</p>
             </div>
 
@@ -68,18 +69,35 @@
                     asperiores!</span>
             </div>
             <div class="col-3">
-                <div class="card">
-                    <h4>ToDo List</h4>
-                    <li>Take a walk</li>
-                    <li>Finish Project</li>
-                    <li>And Other ToDos</li>
-                    <button type="button" class="btn btn-primary">New Todo</button>
+                <div class="card" id="todo-list">
+                    <div class="row">
+                        <div class="col-12 mx-2 py-1">
+                            <h4>ToDo List</h4>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mx-2 mb-2">
+                            <li class="my-1">Take a walk</li>
+                            <li class="my-1">Finish Project</li>
+                            <li class="my-1">And Other ToDos</li>
+                        </div>
+                    </div>
+
+
+                    <button type="button" type="submit" onclick="app.todosController.createTodo()" class=" btn
+                        btn-primary">New Todo</button>
                 </div>
             </div>
         </div>
     </main>
     <footer>
     </footer>
+    <script>
+
+
+
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="

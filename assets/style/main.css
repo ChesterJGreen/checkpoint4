@@ -10696,7 +10696,6 @@ main {
 }
 
 .tall-text {
-  margin-top: 80%;
   font-size: 105px;
 }
 
@@ -10707,7 +10706,7 @@ main {
 }
 
 #mid-page {
-  min-height: 76vh;
+  min-height: 55vh;
 }
 
 .authorH:hover .authorV {
