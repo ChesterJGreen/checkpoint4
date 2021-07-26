@@ -7,7 +7,7 @@ function _draw() {
   let template = ''
   todo.forEach(p => template += (`
     <div class="col-9 offset-1" >
-      <input class="form-check-input todos" type="checkbox" value="${p.completed}">
+      <input class="form-check-input todos action" onclick="app.todosController.changeStatus('${p.id}')" type="checkbox" value="${p.completed}">
         <label class="form-check-label todos" for="todo-item">
           <span class="ml-1">${p.description}</span>
     </div>
@@ -24,6 +24,8 @@ function _draw() {
 export default class TodosController {
   constructor() {
     ProxyState.on('todo', _draw)
+
+
 
 
     this.getTodoList()
@@ -57,5 +59,13 @@ export default class TodosController {
   removeTodo(todoId) {
     console.log('you are trying to delete a job by the id of', todoId)
     todosService.removeTodo(todoId)
+  }
+
+  changeStatus(todoId) {
+    event.preventDefault()
+    let checked = event.target.checked
+    console.log('you are trying to modify this todo ' + todoId)
+    todosService.changeStatus(todoId, checked)
+
   }
 }

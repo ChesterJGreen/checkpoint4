@@ -28,6 +28,19 @@ class TodosService {
     }
 
   }
+  async changeStatus(todoId, checked) {
+    try {
+      let updateTodo = ProxyState.todo.find(t => t.id == todoId)
+      updateTodo.completed = checked
+
+      const res = await sandBox.put('ChesterG/todos/' + todoId, updateTodo)
+      console.log(res.data)
+      ProxyState.todo = ProxyState.todo
+      return
+    } catch (e) {
+      console.error("couldn't modify the todo" + e)
+    }
+  }
 }
 
 export const todosService = new TodosService()
