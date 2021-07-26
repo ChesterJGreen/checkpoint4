@@ -5,20 +5,19 @@ import { todosService } from "../Services/TodosService.js";
 function _draw() {
   const todo = ProxyState.todo
   let template = ''
-  todo.forEach(p => template += (`
-    <div class="col-9 offset-1" >
-      <input class="form-check-input todos action" onclick="app.todosController.changeStatus('${p.id}')" type="checkbox" value="${p.completed}">
-        <label class="form-check-label todos" for="todo-item">
-          <span class="ml-1">${p.description}</span>
-    </div>
-    <div class="col-2 action btn" onclick="app.todosController.removeTodo('${p.id}')">X</div>
-        `))
+  todo.forEach(p => template += p.Template)
   // <div class="col-2"><i class="fa fa-trash action btn" onclick="app.todosController.removeTodo('${p.id}')" aria-hidden="true"></i></div>
 
   if (!template) {
     template += `<div class="col-5">Nothing To Do</div>`
   }
   document.getElementById('todo-list').innerHTML = template
+
+  let tasksPending = todo.filter(t => !t.completed).length
+  let tasksTotal = todo.length
+  let remainingText = `Remaining ${tasksPending} of ${tasksTotal}`
+  document.getElementById('tasks-status').innerHTML = remainingText
+
 }
 
 export default class TodosController {
@@ -62,7 +61,7 @@ export default class TodosController {
   }
 
   changeStatus(todoId) {
-    event.preventDefault()
+    // event.preventDefault()
     let checked = event.target.checked
     console.log('you are trying to modify this todo ' + todoId)
     todosService.changeStatus(todoId, checked)

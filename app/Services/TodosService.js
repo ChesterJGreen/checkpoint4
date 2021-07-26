@@ -13,7 +13,7 @@ class TodosService {
 
   async addTodo(rawTodo) {
     const res = await sandBox.post('ChesterG/todos', rawTodo)
-    ProxyState.todo = [...ProxyState.todo, new Todo(rawTodo)]
+    ProxyState.todo = [...ProxyState.todo, new Todo(res.data)]
 
   }
 

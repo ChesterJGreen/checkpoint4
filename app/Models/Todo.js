@@ -11,17 +11,24 @@ export default class Todo {
     //string required: true
   }
 
+  get CheckedString() {
+    if (this.completed) {
+      return "checked"
+    } else {
+      return ""
+    }
+  }
 
 
   get Template() {
     return `
-    <div class="form-check">
-  <input class="form-check-input todos" type="checkbox" value="${this.completed}">
-  <label class="form-check-label todos" for="todo-item">
-  <span>${this.description}</span><i class="fa fa-trash" aria-hidden="true"></i>
-  </label>
-</div>
-  
+    <div class="col-9 offset-1" >
+      <input class="form-check-input todos action" onclick="app.todosController.changeStatus('${this.id}')" type="checkbox" ${this.CheckedString}>
+        <label class="form-check-label todos" for="todo-item">
+          <span class="ml-1">${this.description}</span>
+    </div>
+    <div class="col-2 action btn" onclick="app.todosController.removeTodo('${this.id}')">X</div>
+        
   `
   }
 }
