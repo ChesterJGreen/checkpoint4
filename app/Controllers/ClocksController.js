@@ -1,6 +1,8 @@
 import { ProxyState } from "../AppState.js"
 import { clocksService } from "../Services/ClocksService.js"
 
+let hour24 = true
+
 function _draw() {
   document.getElementById('clock').innerHTML = this.timeT
   document.getElementById('clock-msg').innerText = timeMessage
@@ -20,11 +22,16 @@ function startTime() {
   } else {
     timeMessage = 'Good Evening'
   };
-  if (h == 0) {
-    h = 12
-  } else if (h > 12) {
-    h = h - 12
-    amPm = 'PM'
+  if (hour24 = true) {
+    if (h == 0) {
+
+      h = 12
+      hour24 = false
+    } else if (h > 12) {
+      h = h - 12
+      amPm = 'PM'
+      hour24 = false
+    }
   }
 
   let m = today.getMinutes();
@@ -42,7 +49,6 @@ function startTime() {
 
 
 
-
 export default class ClocksController {
   constructor() {
     ProxyState.on('clock', _draw)
@@ -50,7 +56,11 @@ export default class ClocksController {
 
   }
 
+  // modifyTime(){
+  //   if (hour24 = false) {
 
+  //   }
+  // }
 
 
 

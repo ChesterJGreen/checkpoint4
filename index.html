@@ -36,16 +36,15 @@
 <body class="" id="full-body">
     <main class="container-fluid">
         <div class="row">
-            <div class="col-2 pt-3">
-                <a class="navbar-brand  skeleton-loader " href="#">
+            <div class="col-2 pt-3 " onclick="app.tempsController.changeTemp()">
+                <a class="navbar-brand  skeleton-loader pl-3 pr-1" href="#" id="temp">
                     <!---->
-                    <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+                    <img src="assets/img/logo.png" width="50" height="45" alt="" loading="lazy">
                     <span class="ml-2 px-2">Inspire</span>
                 </a>
             </div>
-            <div class="offset-8 col-2 pt-3 text-light text">
-                <h2 id="temp">90🔥</h2>
-            </div>
+
+        </div>
         </div>
         <div class="row" id="mid-page">
             <div class="mt-5 col-12 text-center">
@@ -58,9 +57,10 @@
             <div class="col-3">
                 <div class="row text">
                     <div class="col-12 my-5"></div>
-                    <div class="col-12 my-4"></div>
+                    <div class="col-12 my-5"></div>
+                    <div class="col-12 my-5"></div>
                     <div class="col-6 d-flex align-items-end">
-                        <div class="text-light">
+                        <div class="text-light" onclick="app.imagesController.getNewImage()">
                             <span>Image created by:</span>
                             <h5 id="author"></h5>
                         </div>
@@ -69,7 +69,9 @@
             </div>
             <div class="offset col-6 text-center text-light  justify-content-center">
                 <div class="row ">
-                    <div class="col-12 my-4"></div>
+                    <div class="col-12 my-5"></div>
+                    <div class="col-12 my-5"></div>
+                    <div class="col-12 my-3"></div>
                     <div class="col-12 text authorH" onclick="app.quotesController.getNewQuote()">
                         <span id="quote-area">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aut qui quae
                             corporis
@@ -78,11 +80,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="row">
-                    <div class=" col-12">
-                        <div class="card text bg-info text-light hrb px-3 py-2">
-                            <div class="row">
+            <div class="col-3 d-flex">
+                <div class="row d-flex align-content-center">
+                    <div class=" col-12  ">
+                        <div class="card  text bg-info text-light hrb px-3 py-2 ">
+                            <div class="row  ">
                                 <div class="col-12">
                                     <h4>ToDo List</h4>
                                     <span id="tasks-status" class="text-light text-shadow">0/3</span>

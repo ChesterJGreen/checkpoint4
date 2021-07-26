@@ -9,7 +9,7 @@ function _draw() {
   // <div class="col-2"><i class="fa fa-trash action btn" onclick="app.todosController.removeTodo('${p.id}')" aria-hidden="true"></i></div>
 
   if (!template) {
-    template += `<div class="col-5">Nothing To Do</div>`
+    template += `<div class="col-6">Nothing To Do</div>`
   }
   document.getElementById('todo-list').innerHTML = template
 

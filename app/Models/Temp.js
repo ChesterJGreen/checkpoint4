@@ -4,7 +4,7 @@ export default class Temp {
     this.feelsLike = feels_like || main.feels_like
     this.tempMin = temp_min || main.temp_min
     this.tempMax = temp_max || main.temp_max
-    this.icon = icon || weather.icon
+    this.icon = icon || weather[0].icon
 
 
     this.tempF = `${Math.floor((this.temp - 273.15) * 9 / 5 + 32)}°F`
@@ -25,7 +25,7 @@ export default class Temp {
 
   get Template() {
     return `
-      <h2 onClick="app.tempsController.changeTemp()">${this.displayTemp}</h2>
+    <span onClick="app.tempsController.changeTemp()">${this.displayTemp}</span><img src="http://openweathermap.org/img/wn/${this.icon}@2x.png" width="50" height="45" alt="" loading="lazy"></img>
       `
   }
 }
