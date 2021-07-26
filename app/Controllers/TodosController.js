@@ -11,11 +11,12 @@ function _draw() {
         <label class="form-check-label todos" for="todo-item">
           <span class="ml-1">${p.description}</span>
     </div>
-        <div class="col-2"><i class="fa fa-trash action btn" onclick="app.todosController.removeTodo('${p.id}')" aria-hidden="true"></i></div>
+    <div class="col-2 action btn" onclick="app.todosController.removeTodo('${p.id}')">X</div>
         `))
+  // <div class="col-2"><i class="fa fa-trash action btn" onclick="app.todosController.removeTodo('${p.id}')" aria-hidden="true"></i></div>
 
   if (!template) {
-    template += `<p>Nothing To Do</p>`
+    template += `<div class="col-5">Nothing To Do</div>`
   }
   document.getElementById('todo-list').innerHTML = template
 }
@@ -23,6 +24,7 @@ function _draw() {
 export default class TodosController {
   constructor() {
     ProxyState.on('todo', _draw)
+
 
     this.getTodoList()
   }

@@ -10721,9 +10721,6 @@ main {
   color: white;
   text-shadow: -1px 1px 2px #23430C, 1px 1px 2px #23430C, 1px -1px 2px #23430C, -1px -1px 2px #23430C;
 }
-.text:not(img) {
-  text-shadow: 0 0 0, 0 0 0, 0 0 0, 0 0 0;
-}
 
 .textR {
   color: #613f3f;
