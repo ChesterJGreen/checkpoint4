@@ -17,6 +17,16 @@ class TodosService {
 
   }
 
+  async removeTodo(todoId) {
+    try {
+      const res = await sandBox.delete('ChesterG/todos/' + todoId)
+      console.log(res.data)
+      ProxyState.todo = ProxyState.todo.filter(t => t.id != todoId)
+    } catch (error) {
+      console.error(error)
+    }
+
+  }
 }
 
 export const todosService = new TodosService()

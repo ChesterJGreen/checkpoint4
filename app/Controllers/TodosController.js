@@ -5,7 +5,15 @@ import { todosService } from "../Services/TodosService.js";
 function _draw() {
   const todo = ProxyState.todo
   let template = ''
-  todo.forEach(p => template += `<li class="action" onclick="app.todosController.removeTodo('${p.description}')">${p.description}</li>`)
+  todo.forEach(p => template += (`
+    <div class="col-9 offset-1" >
+      <input class="form-check-input todos" type="checkbox" value="${p.completed}">
+        <label class="form-check-label todos" for="todo-item">
+          <span class="ml-1">${p.description}</span>
+    </div>
+        <div class="col-2"><i class="fa fa-trash action btn" onclick="app.todosController.removeTodo('${p.id}')" aria-hidden="true"></i></div>
+        `))
+
   if (!template) {
     template += `<p>Nothing To Do</p>`
   }
@@ -43,5 +51,9 @@ export default class TodosController {
     } catch (error) {
       console.error('could not post to server' + error)
     }
+  }
+  removeTodo(todoId) {
+    console.log('you are trying to delete a job by the id of', todoId)
+    todosService.removeTodo(todoId)
   }
 }
