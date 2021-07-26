@@ -8,17 +8,19 @@ export default class TempsController {
   constructor() {
     ProxyState.on("temp", _draw);
 
-    _draw()
+
 
     this.getNewTemp()
   }
   async changeTemp() {
+
     try {
       await tempsService.changeTemp();
-      _draw()
+
     } catch (error) {
 
     }
+    _draw()
   }
 
   async getNewTemp() {

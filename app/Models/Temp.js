@@ -1,3 +1,5 @@
+import { tempsService } from "../Services/TempsService.js"
+
 export default class Temp {
   constructor({ temp, feels_like, temp_min, temp_max, icon, main, weather }) {
     this.temp = temp || main.temp
@@ -14,6 +16,7 @@ export default class Temp {
   }
 
   changeTemp() {
+
     if (this.celsius == false) {
       this.displayTemp = this.tempC
     }
@@ -21,11 +24,12 @@ export default class Temp {
       this.displayTemp = this.tempF
     }
     this.celsius = !this.celsius
+
   }
 
   get Template() {
     return `
-    <span onClick="app.tempsController.changeTemp()">${this.displayTemp}</span><img src="http://openweathermap.org/img/wn/${this.icon}@2x.png" width="50" height="45" alt="" loading="lazy"></img>
+    <span onClick="app.tempsController.changeTemp()">${this.displayTemp}</span><img src="http://openweathermap.org/img/wn/${this.icon}@2x.png" width="50" height="50" alt="" loading="lazy"></img>
       `
   }
 }
