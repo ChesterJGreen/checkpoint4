@@ -22,7 +22,7 @@ export default class Todo {
 
   get Template() {
     return `
-    <div class="col-9 offset-1" >
+    <div class="col-8 offset-1" >
       <input class="form-check-input todos action" onclick="app.todosController.changeStatus('${this.id}')" type="checkbox" ${this.CheckedString}>
         <label class="form-check-label todos" for="todo-item">
           <span class="ml-1">${this.description}</span>
